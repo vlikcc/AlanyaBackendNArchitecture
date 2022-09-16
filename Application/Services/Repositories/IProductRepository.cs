@@ -6,10 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Application.Services.Repositories
 {
-    public interface ICategoryRepository:IAsyncRepository<Category>,IRepository<Category>
+    public interface IProductRepository:IAsyncRepository<Product>,IRepository<Product>
     {
     }
 }
