@@ -10,6 +10,7 @@ using MediatR;
 using FluentValidation;
 using Core.Application.Pipelines.Validation;
 using Core.Security.JWT;
+using Application.Features.Categories.Rules;
 
 namespace Application.Services
 {
@@ -19,6 +20,7 @@ namespace Application.Services
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddScoped<CategoryBusinessRules>();
 
             
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));

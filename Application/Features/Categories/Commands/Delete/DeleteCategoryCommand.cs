@@ -1,4 +1,5 @@
 ﻿using Application.Features.Categories.Dtos;
+using Application.Features.Categories.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
@@ -19,18 +20,22 @@ namespace Application.Features.Categories.Commands.Delete
         {
             private readonly ICategoryRepository _categoryeRepository;
             private readonly IMapper _mapper;
+            private readonly CategoryBusinessRules _categoryBusinessRules;
 
-            public DeleteCategoryCommandHandler(ICategoryRepository categoryeRepository, IMapper mapper)
+            public DeleteCategoryCommandHandler(ICategoryRepository categoryeRepository, IMapper mapper,CategoryBusinessRules categoryBusinessRules)
             {
                 _categoryeRepository = categoryeRepository;
                 _mapper = mapper;
+                _categoryBusinessRules = categoryBusinessRules;
             }
 
             public async Task<DeletedCategoryDto> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
             {
+                
                 Category? category = await _categoryeRepository.GetAsync(c => c.CategoryName == request.CategoryName);
 
                 Category mappedCategory = _mapper.Map<Category>(category);
+                await _categoryBusinessRules.CategoryShouldExcistWhenRequested(mappedCategory);
                 Category deletedCategory = await _categoryeRepository.DeleteAsync(mappedCategory);
                 DeletedCategoryDto result = _mapper.Map<DeletedCategoryDto>(deletedCategory);
                 return result;

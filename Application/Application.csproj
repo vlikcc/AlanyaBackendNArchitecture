@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Categories\Rules\" />
     <Folder Include="Features\Categories\Queries\" />
-    <Folder Include="Features\Categories\Profiles\" />
     <Folder Include="Features\Customers\Commands\Create\" />
     <Folder Include="Features\Customers\Commands\Delete\" />
     <Folder Include="Features\Customers\Commands\Update\" />

@@ -1,4 +1,5 @@
 ﻿using Application.Features.Categories.Dtos;
+using Application.Features.Categories.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
@@ -19,16 +20,19 @@ namespace Application.Features.Categories.Commands.Create
         {
             private readonly ICategoryRepository _categoryRepository;
             private readonly IMapper _mapper;
+            private readonly CategoryBusinessRules _businessRules;
 
-            public CreateCategoryCommandHandler(ICategoryRepository categoryRepository, IMapper mapper)
+            public CreateCategoryCommandHandler(ICategoryRepository categoryRepository, IMapper mapper,CategoryBusinessRules categoryBusinessRules)
             {
                 _categoryRepository = categoryRepository;
                 _mapper = mapper;
+                _businessRules = categoryBusinessRules;
             }
 
             public async Task<CreatedCategoryDto> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
             {
                 Category mappedCategory = _mapper.Map<Category>(request);
+                await _businessRules.CategoryNameCannotBeDublicated(request.CategoryName);
                 Category createdCategory = await _categoryRepository.AddAsync(mappedCategory);
                 CreatedCategoryDto result = _mapper.Map<CreatedCategoryDto>(createdCategory);
                 return result;
