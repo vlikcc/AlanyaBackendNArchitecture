@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Customers.Commands.Delete
+namespace Application.Features.Employees.Commands.Delete
 {
-    public class DeleteEmployeeCommand:IRequest<DeletedEmployeeDto>
+    public class DeleteEmployeeCommand : IRequest<DeletedEmployeeDto>
     {
 
     }
