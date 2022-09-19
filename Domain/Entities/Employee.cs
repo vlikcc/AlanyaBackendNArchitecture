@@ -1,4 +1,5 @@
 ﻿using Core.Persistence.Repositories;
+using Core.Security.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Domain.Entities
     public class Employee : Entity
     {
         public int Id { get; set; }
+        
         public string NationalId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -19,6 +21,27 @@ namespace Domain.Entities
         public decimal Salary { get; set; }
         public string MaritalStatus { get; set; }
         public string Department { get; set; }
+
+        public Employee(int id, int userId, string nationalId, string firstName, string lastName, string phoneNumber, string address, string emailAdress, decimal salary, string maritalStatus, string department)
+        {
+            Id = id;
+           
+            NationalId = nationalId;
+            FirstName = firstName;
+            LastName = lastName;
+            PhoneNumber = phoneNumber;
+            Address = address;
+            EmailAdress = emailAdress;
+            Salary = salary;
+            MaritalStatus = maritalStatus;
+            Department = department;
+        }
+
+        public Employee()
+        {
+        }
+
+       
 
     }
 }
