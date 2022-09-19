@@ -8,14 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Categories\Queries\" />
-    <Folder Include="Features\Customers\Commands\Create\" />
-    <Folder Include="Features\Customers\Commands\Delete\" />
-    <Folder Include="Features\Customers\Commands\Update\" />
-    <Folder Include="Features\Customers\Dtos\" />
-    <Folder Include="Features\Customers\Models\" />
-    <Folder Include="Features\Customers\Profiles\" />
-    <Folder Include="Features\Customers\Queries\" />
-    <Folder Include="Features\Customers\Rules\" />
     <Folder Include="Features\Employees\Commands\Create\" />
     <Folder Include="Features\Employees\Commands\Delete\" />
     <Folder Include="Features\Employees\Commands\Update\" />

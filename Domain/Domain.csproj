@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\vlikcc\Kodlama.io.Devs\src\corePackages\Core.Persistence\Core.Persistence.csproj" />
+    <ProjectReference Include="..\..\vlikcc\Kodlama.io.Devs\src\corePackages\Core.Security\Core.Security.csproj" />
   </ItemGroup>
 
 </Project>

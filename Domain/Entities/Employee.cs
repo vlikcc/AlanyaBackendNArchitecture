@@ -19,5 +19,6 @@ namespace Domain.Entities
         public decimal Salary { get; set; }
         public string MaritalStatus { get; set; }
         public string Department { get; set; }
+
     }
 }
