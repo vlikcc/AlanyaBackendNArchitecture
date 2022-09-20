@@ -19,6 +19,24 @@ namespace Domain.Entities
         public decimal UnitPrice { get; set; }
         public int UnitsInStock { get; set; }
         public DateTime ExpirationDate { get; set; }
+        public virtual Category Category { get; set; }
 
+        public Product(int id, int categoryId, int productImageId, int recipeId, int discountId, int unitId, string productName, decimal unitPrice, int unitsInStock, DateTime expirationDate)
+        {
+            Id = id;
+            CategoryId = categoryId;
+            ProductImageId = productImageId;
+            RecipeId = recipeId;
+            DiscountId = discountId;
+            UnitId = unitId;
+            ProductName = productName;
+            UnitPrice = unitPrice;
+            UnitsInStock = unitsInStock;
+            ExpirationDate = expirationDate;
+        }
+
+        public Product()
+        {
+        }
     }
 }

@@ -14,8 +14,7 @@ namespace Domain.Entities
         public string Unit { get; set; }
         public decimal Amount { get; set; }
         public decimal Cost { get; set; }
-        public DateTime ExpirationDate { get; set; }
-        public virtual Reciepe? Reciepe { get; set; }
+        public DateTime ExpirationDate { get; set; }   
 
         public Stockpile(int id, string stockName, string unit, decimal amount, decimal cost, DateTime expirationDate)
         {
