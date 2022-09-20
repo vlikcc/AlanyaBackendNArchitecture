@@ -11,6 +11,8 @@ using FluentValidation;
 using Core.Application.Pipelines.Validation;
 using Core.Security.JWT;
 using Application.Features.Categories.Rules;
+using Application.Features.Customers.Rules;
+using Application.Features.Employees.Rules;
 
 namespace Application.Services
 {
@@ -21,6 +23,8 @@ namespace Application.Services
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddScoped<CategoryBusinessRules>();
+            services.AddScoped<CustomerBusinessRules>();
+            services.AddScoped<EmployeeBusinessRules>();
 
             
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));

@@ -10,16 +10,6 @@
     <Folder Include="Features\Categories\Queries\" />
     <Folder Include="Features\Employees\Commands\Update\" />
     <Folder Include="Features\Employees\Models\" />
-    <Folder Include="Features\Employees\Profiles\" />
-    <Folder Include="Features\Employees\Queries\" />
-    <Folder Include="Features\Employees\Rules\" />
-    <Folder Include="Features\Orders\Commands\Create\" />
-    <Folder Include="Features\Orders\Commands\Delete\" />
-    <Folder Include="Features\Orders\Commands\Update\" />
-    <Folder Include="Features\Orders\Dtos\" />
-    <Folder Include="Features\Orders\Models\" />
-    <Folder Include="Features\Orders\Profiles\" />
-    <Folder Include="Features\Orders\Queries\" />
     <Folder Include="Features\Orders\Rules\" />
     <Folder Include="Features\Products\Commands\Create\" />
     <Folder Include="Features\Products\Commands\Delete\" />

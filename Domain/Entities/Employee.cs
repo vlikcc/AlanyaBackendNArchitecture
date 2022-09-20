@@ -22,7 +22,7 @@ namespace Domain.Entities
         public string MaritalStatus { get; set; }
         public string Department { get; set; }
 
-        public Employee(int id, int userId, string nationalId, string firstName, string lastName, string phoneNumber, string address, string emailAdress, decimal salary, string maritalStatus, string department)
+        public Employee(int id, string nationalId, string firstName, string lastName, string phoneNumber, string address, string emailAdress, decimal salary, string maritalStatus, string department)
         {
             Id = id;
            
