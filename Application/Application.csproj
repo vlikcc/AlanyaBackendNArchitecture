@@ -13,13 +13,6 @@
     <Folder Include="Features\Orders\Rules\" />
     <Folder Include="Features\Products\Commands\Delete\" />
     <Folder Include="Features\Products\Rules\" />
-    <Folder Include="Features\Reciepes\Commands\Create\" />
-    <Folder Include="Features\Reciepes\Commands\Delete\" />
-    <Folder Include="Features\Reciepes\Commands\Update\" />
-    <Folder Include="Features\Reciepes\Dtos\" />
-    <Folder Include="Features\Reciepes\Models\" />
-    <Folder Include="Features\Reciepes\Profiles\" />
-    <Folder Include="Features\Reciepes\Queries\" />
     <Folder Include="Features\Reciepes\Rules\" />
     <Folder Include="Features\StockInRecieps\Commands\Create\" />
     <Folder Include="Features\StockInRecieps\Commands\Delete\" />

@@ -12,6 +12,7 @@ namespace Domain.Entities
         public int Id { get; set; }
         public int StockId { get; set; }
         public int ReciepeId { get; set; }
+        public decimal Price { get; set; }  
         public virtual Stockpile Stockpile { get; set; }
         public virtual Reciepe Reciepe { get; set; }
 
