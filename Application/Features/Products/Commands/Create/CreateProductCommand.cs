@@ -1,6 +1,7 @@
 ﻿using Application.Features.Products.Dtos;
 using Application.Services.Repositories;
 using AutoMapper;
+using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,13 @@ namespace Application.Features.Products.Commands.Create
                 _mapper = mapper;
             }
 
-            public Task<CreatedProductDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+            public async Task<CreatedProductDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
             {
-                throw new NotImplementedException();
+                Product? product = _mapper.Map<Product>(request);
+                Product createdProduct = await _productRepository.AddAsync(product);
+                CreatedProductDto result = _mapper.Map<CreatedProductDto>(createdProduct);
+                return result;
+
             }
         }
     }

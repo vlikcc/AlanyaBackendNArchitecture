@@ -12,10 +12,6 @@
     <Folder Include="Features\Employees\Models\" />
     <Folder Include="Features\Orders\Rules\" />
     <Folder Include="Features\Products\Commands\Delete\" />
-    <Folder Include="Features\Products\Commands\Update\" />
-    <Folder Include="Features\Products\Models\" />
-    <Folder Include="Features\Products\Profiles\" />
-    <Folder Include="Features\Products\Queries\" />
     <Folder Include="Features\Products\Rules\" />
     <Folder Include="Features\Reciepes\Commands\Create\" />
     <Folder Include="Features\Reciepes\Commands\Delete\" />
