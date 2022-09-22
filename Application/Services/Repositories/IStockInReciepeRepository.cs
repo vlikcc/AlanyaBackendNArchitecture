@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.Repositories
 {
-    public interface IStockInReciepeRepository:IAsyncRepository<StocksInReciepe>,IRepository<StocksInReciepe>
+    public interface IStockInReciepeRepository:IAsyncRepository<StockInReciepe>,IRepository<StockInReciepe>
     {
     }
 }
