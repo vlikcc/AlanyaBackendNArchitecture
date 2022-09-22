@@ -11,7 +11,8 @@ namespace Domain.Entities
     public class Employee : Entity
     {
         public int Id { get; set; }
-        
+        public int UserId { get; set; }
+
         public string NationalId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -21,11 +22,12 @@ namespace Domain.Entities
         public decimal Salary { get; set; }
         public string MaritalStatus { get; set; }
         public string Department { get; set; }
+        public virtual User User { get; set; }
 
-        public Employee(int id, string nationalId, string firstName, string lastName, string phoneNumber, string address, string emailAdress, decimal salary, string maritalStatus, string department)
+        public Employee(int id,  int userId,string nationalId, string firstName, string lastName, string phoneNumber, string address, string emailAdress, decimal salary, string maritalStatus, string department)
         {
             Id = id;
-           
+            UserId = userId;           
             NationalId = nationalId;
             FirstName = firstName;
             LastName = lastName;
