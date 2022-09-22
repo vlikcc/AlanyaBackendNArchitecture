@@ -61,6 +61,7 @@ namespace Persistence.Contexts
                 e.ToTable("Employees").HasKey(k=>k.Id);
                 e.Property(p => p.UserId).HasColumnName("UserId");
                 e.Property(p => p.NationalId).HasColumnName("NationalIdentity");
+                e.Property(p => p.FirstName).HasColumnName("FirstName");
             });
             
         }
