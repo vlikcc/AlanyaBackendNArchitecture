@@ -1,4 +1,5 @@
-﻿using Core.Persistence.Repositories;
+﻿using Application.Services.Repositories;
+using Core.Persistence.Repositories;
 using Domain.Entities;
 using Persistence.Contexts;
 using System;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class EmployeeREpository : EfRepositoryBase<Employee, BaseDbContext>
+    public class EmployeeRepository : EfRepositoryBase<Employee, BaseDbContext>,IEmployeeRepository
     {
-        public EmployeeREpository(BaseDbContext context) : base(context)
+        public EmployeeRepository(BaseDbContext context) : base(context)
         {
         }
     }

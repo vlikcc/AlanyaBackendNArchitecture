@@ -1,4 +1,5 @@
-﻿using Core.Persistence.Repositories;
+﻿using Application.Services.Repositories;
+using Core.Persistence.Repositories;
 using Domain.Entities;
 using Persistence.Contexts;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class OrderRepository : EfRepositoryBase<Order, BaseDbContext>
+    public class OrderRepository : EfRepositoryBase<Order, BaseDbContext>,IOrderRepository
     {
         public OrderRepository(BaseDbContext context) : base(context)
         {

@@ -22,7 +22,13 @@ namespace Persistence
                                                          configuration.GetConnectionString("AlanyaNArchitectureConnectionString")));
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-           
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IReciepeRepository, ReciepeRepository>();
+            services.AddScoped<IStockInReciepeRepository,StockInRecipeRepository>();
+            services.AddScoped<IStockpileRepository,StockpileRepository>();           
 
             return services;
         }

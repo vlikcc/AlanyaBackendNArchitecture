@@ -1,4 +1,5 @@
-﻿using Core.Persistence.Repositories;
+﻿using Application.Services.Repositories;
+using Core.Persistence.Repositories;
 using Domain.Entities;
 using Persistence.Contexts;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class StockInRecipeRepository : EfRepositoryBase<StockInReciepe, BaseDbContext>
+    public class StockInRecipeRepository : EfRepositoryBase<StockInReciepe, BaseDbContext>,IStockInReciepeRepository
     {
         public StockInRecipeRepository(BaseDbContext context) : base(context)
         {

@@ -1,4 +1,5 @@
-﻿using Core.Persistence.Repositories;
+﻿using Application.Services.Repositories;
+using Core.Persistence.Repositories;
 using Domain.Entities;
 using Persistence.Contexts;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class ReciepeRepository : EfRepositoryBase<Reciepe, BaseDbContext>
+    public class ReciepeRepository : EfRepositoryBase<Reciepe, BaseDbContext>,IReciepeRepository
     {
         public ReciepeRepository(BaseDbContext context) : base(context)
         {
