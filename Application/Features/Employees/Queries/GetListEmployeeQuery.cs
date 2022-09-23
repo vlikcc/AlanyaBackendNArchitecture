@@ -15,7 +15,7 @@ namespace Application.Features.Employees.Queries
 {
     public class GetListEmployeeQuery:IRequest<EmployeeListModel>
     {
-        PageRequest PageRequest { get; set; }
+        public PageRequest PageRequest { get; set; }
 
         public class GetListEmployeeQueryHandler:IRequestHandler<GetListEmployeeQuery,EmployeeListModel>
         {
