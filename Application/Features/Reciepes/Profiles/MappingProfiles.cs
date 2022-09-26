@@ -29,7 +29,7 @@ namespace Application.Features.Reciepes.Profiles
             CreateMap<Reciepe, DeletedReciepeDto>().ReverseMap();
 
             CreateMap<Reciepe,ReciepeListDto>().ReverseMap();
-            CreateMap<IPaginate<Reciepe>, ReceiepeListModel>().ReverseMap();
+            CreateMap<IPaginate<Reciepe>, ReciepeListModel>().ReverseMap();
 
             
         }
