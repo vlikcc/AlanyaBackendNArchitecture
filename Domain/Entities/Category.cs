@@ -9,7 +9,17 @@ namespace Domain.Entities
 {
     public class Category : Entity
     {
+        public Category()
+        {
+        }
+
         public int Id { get; set; }
         public string CategoryName { get; set; }
+
+        public Category(int id, string categoryName)
+        {
+            Id = id;
+            CategoryName = categoryName;
+        }
     }
 }
