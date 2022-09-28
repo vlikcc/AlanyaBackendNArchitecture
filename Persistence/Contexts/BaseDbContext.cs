@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Buffers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,23 +16,27 @@ namespace Persistence.Contexts
         protected IConfiguration Configuration { get; set; }
 
         public  DbSet<Category> Categories { get; set; }
-        //public  DbSet<Customer> Customers { get; set; }
-        //public  DbSet<Employee> Employees { get; set; }
-        //public  DbSet<Order> Orders { get; set; }
-        //public  DbSet<Product> Products { get; set; }
-        //public  DbSet<Reciepe> Reciepes { get; set; }
-        //public  DbSet<StockInReciepe> StockInReciepes { get; set; }
-        //public  DbSet<Stockpile> Stockpiles { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Reciepe> Reciepes { get; set; }
+        public DbSet<StockInReciepe> StockInReciepes { get; set; }
+        public DbSet<Stockpile> Stockpiles { get; set; }
 
-        public BaseDbContext(DbContextOptions dbContextOptions ,IConfiguration configuration ):base (dbContextOptions)
+        public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
         {
             Configuration = configuration;  
+        }
+
+        public BaseDbContext()
+        {
         }
 
         protected  override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if(!optionsBuilder.IsConfigured)
-                base.OnConfiguring(optionsBuilder.UseSqlServer(Configuration.GetConnectionString("AlanyaNArchitectureConnectionString")));
+                base.OnConfiguring(optionsBuilder.UseSqlServer(Configuration.GetConnectionString("AlanyaConnectionString")));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
