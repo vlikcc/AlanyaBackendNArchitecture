@@ -25,8 +25,9 @@ namespace Application.Services
             services.AddScoped<CategoryBusinessRules>();
             services.AddScoped<CustomerBusinessRules>();
             services.AddScoped<EmployeeBusinessRules>();
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-            
+
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
             return services;

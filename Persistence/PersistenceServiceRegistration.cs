@@ -1,9 +1,14 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Application.Services.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Contexts;
-using Microsoft.EntityFrameworkCore;
 using Persistence.Repositories;
-using Application.Services.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Persistence
 {
@@ -16,13 +21,13 @@ namespace Persistence
                                                      options.UseSqlServer(
                                                          configuration.GetConnectionString("AlanyaConnectionString")));
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            services.AddScoped<IOrderRepository, OrderRepository>();
+            //services.AddScoped<ICustomerRepository, CustomerRepository>();
+            //services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            //services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IReciepeRepository, ReciepeRepository>();
-            services.AddScoped<IStockInReciepeRepository, StockInRecipeRepository>();
-            services.AddScoped<IStockpileRepository, StockpileRepository>();
+            //services.AddScoped<IReciepeRepository, ReciepeRepository>();
+            //services.AddScoped<IStockInReciepeRepository, StockInRecipeRepository>();
+            //services.AddScoped<IStockpileRepository, StockpileRepository>();
 
             return services;
         }

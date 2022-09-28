@@ -9,7 +9,7 @@ namespace Domain.Entities
 {
     public class Stockpile : Entity
     {
-        public int Id { get; set; }
+       
         public string StockName { get; set; }
         public string Unit { get; set; }
         public decimal Amount { get; set; }
@@ -31,3 +31,6 @@ namespace Domain.Entities
         }
     }
 }
+// burda stockpile recipe product ve stockınReciepe birbirine bağlı olması gerekiyor ama aradaki ilişkiyi bir türlü kuramadım
+// şuan işyerindeyim akşam müsait olursanız devam edelim mi
+//teşekkürler

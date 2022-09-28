@@ -1,21 +1,22 @@
 ﻿using Core.Security.Entities;
-using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System.Buffers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities;
 
 namespace Persistence.Contexts
 {
-    public class BaseDbContext:DbContext
+    public class BaseDbContext : DbContext
     {
         protected IConfiguration Configuration { get; set; }
 
-        public  DbSet<Category> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -26,16 +27,15 @@ namespace Persistence.Contexts
 
         public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
         {
-            Configuration = configuration;  
+            Configuration = configuration;
         }
 
-        public BaseDbContext()
-        {
-        }
 
-        protected  override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if(!optionsBuilder.IsConfigured)
+            if (!optionsBuilder.IsConfigured)
                 base.OnConfiguring(optionsBuilder.UseSqlServer(Configuration.GetConnectionString("AlanyaConnectionString")));
         }
 
@@ -45,7 +45,8 @@ namespace Persistence.Contexts
             {
                 c.ToTable("Categories").HasKey(k => k.Id);
                 c.Property(p => p.Id).HasColumnName("Id");
-                c.Property(p=>p.CategoryName ).HasColumnName("CategoryName");
+                c.Property(p => p.CategoryName).HasColumnName("CategoryName");
+                c.HasMany(p => p.Products);
             });
 
             modelBuilder.Entity<Customer>(c =>
@@ -105,6 +106,7 @@ namespace Persistence.Contexts
                 p.Property(p => p.UnitsInStock).HasColumnName("UnitsInStock");
                 p.Property(p => p.ExpirationDate).HasColumnName("ExpirationDate");
                 p.HasOne(p => p.Category);
+
             });
 
             modelBuilder.Entity<Reciepe>(r =>

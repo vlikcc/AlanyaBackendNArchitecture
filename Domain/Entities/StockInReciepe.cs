@@ -9,7 +9,7 @@ namespace Domain.Entities
 {
     public class StockInReciepe:Entity
     {
-        public int Id { get; set; }
+        
         public int StockId { get; set; }
         public int ReciepeId { get; set; }
         public decimal Amount { get; set; } 

@@ -13,8 +13,10 @@ namespace Domain.Entities
         {
         }
 
-        public int Id { get; set; }
+        
         public string CategoryName { get; set; }
+
+        public IList<Product> Products { get; set; }
 
         public Category(int id, string categoryName)
         {

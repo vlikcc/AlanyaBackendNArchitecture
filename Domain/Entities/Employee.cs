@@ -10,7 +10,7 @@ namespace Domain.Entities
 {
     public class Employee : Entity
     {
-        public int Id { get; set; }
+       
         public int UserId { get; set; }
 
         public string NationalId { get; set; }
