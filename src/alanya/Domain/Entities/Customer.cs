@@ -16,12 +16,12 @@ namespace Domain.Entities
         
         
         public int UserId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Adress { get; set; }
-        public string TelephoneNumber { get; set; }
-        public string Email { get; set; }
-        public virtual User User { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public string? Adress { get; set; }
+        public string? TelephoneNumber { get; set; }
+        public string? Email { get; set; }
+        public virtual User? User { get; set; }
 
         public Customer(int id, int userId, string firstName, string lastName, string adress, string telephoneNumber, string email)
         {
